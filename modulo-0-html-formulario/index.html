@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="description" content="Este es mi primer formulario">
         <meta name="robots" content="index, follow">
-        <title>Rellena el formulario</title>
+        <title>Práctica de Formulario</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
@@ -14,20 +14,21 @@
             <form action="">
                 <label for="nombre">
                     <span>Escribe tu nombre</span>
-                    <input type="text" id="nombre" placeholder="Nombre">
+                    <input type="text" id="nombre" placeholder="Nombre" name="nombre" autocomplete="name" required/>
                 </label>
-                <label for="inicio">
-                    <span> <h2>¿Cuándo empezaste el curso?</h2></span>
-                    <input type="date" id="inicio">
+                <label for="email">
+                    <span>¿Cúal es tu correo electrónico?</span>
+                    <input type="email" id="mail" name="email" autocomplete="email" required/>
                 </label>
-                <label for="horario">
-                    <span>¿A qué hora te conectas?</span>
-                    <input type="time" id="horario">
+                <label for="pais">
+                    <span>¿En qué país vives?</span>
+                    <input type="text" id="pais" name="pais" autocomplete="country" required/>
                 </label> 
-                <label for="color">
-                    <span>Dime un color</span>
-                    <input type="color" id="color">
-                </label>      
+                <label for="cp">
+                    <span>Escribe tu código postal</span>
+                    <input type="text" id="cp" name="cp" autocomplete="postal-code" required/>
+                </label>
+                <input type="submit"/>      
             </form>
         </main>
     </body>
