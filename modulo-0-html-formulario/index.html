@@ -22,7 +22,22 @@
                 </label>
                 <label for="pais">
                     <span>¿En qué país vives?</span>
-                    <input type="text" id="pais" name="pais" autocomplete="country" required/><br><br>
+                    <input type="text" id="pais" name="pais" autocomplete="country" required/><br><br> <!-- el atributo <br> añade un salto de párrafo, es como enter en word o bajar a la linea siguiente-->
+                </label>
+                    <!-- ahora vamos a contruir una lista desplegable con texto predictivo-->
+                <label for="idioma">
+                    <span>¿Cuál es tu idioma?</span>
+                    <input list="idioma">
+                    <datalist id="idioma">
+                        <option value="Español"></option>
+                        <option value="Catalán"></option>
+                        <option value="Euskera"></option>
+                        <option value="Francés"></option>
+                        <option value="Alemán"></option>
+                        <option value="Inglés"></option>
+                        <option value="Italiano"></option>
+                        <option value="Polaco"></option>
+                    </datalist> 
                 </label> 
                 <label for="cp">
                     <span>Escribe tu código postal</span>
