@@ -1,0 +1,35 @@
+
+.subtitle
+  {font-family: Arial, Helvetica, sans-serif; font-size: 16pt; font-style:initial
+  color: darkslategray;}
+li 
+    {font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-style: initial; font-size: 14pt;
+      color: rgb(21, 21, 21);}
+.button-carnes
+    {padding: 8px 10px;
+  background-color: #d41313;
+  color: rgb(234, 232, 232);
+  border: darkblue;
+  border-radius: 5px;
+  cursor: poin}
+
+  button
+    {padding: 8px 10px;
+  background-color: #0f997b;
+  color: rgb(240, 233, 233);
+  border: darkblue;
+  border-radius: 5px;
+  cursor: poin}
+main{background-color: rgb(211, 238, 238);}
+header
+  {font-family: Arial, Helvetica, sans-serif; font-size: medium;
+   color:rgb(114, 114, 221);
+  background-color: beige;
+  border: #0f997b;
+  }
+  .adelante
+    {font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 20pt;
+    text-align: center;
+  }
+.lucha
+  {border: black;}
