@@ -18,7 +18,7 @@
 
 //EJERICICIO SWITCH
 
-let expr = "plátanos"
+let expr = "mango"
 
 switch (expr) {
     case "manzana":
@@ -35,5 +35,47 @@ switch (expr) {
         console.log ("Los mangos están a 3€/kilo")
     break;
     default:
-        console.log (`Lo sentimos, el producto ${expr} está agotado`);2
+        console.log (`Lo sentimos, el producto ${expr} está agotado`);
+}
+
+//EJERCICIO FOR (BUCLES,LOOP,CICLO)
+ let list = ["dormir", "pasear a Jack", "estudiar", "comer", "estudiar", "pasear a Jack", "dormir", "repetir"]
+ for (let i= 0; i < list.length; i++) {
+    console.log (list[i]);
+ }
+console.log ("************************")
+
+ //EJERCICIO DE FOR-OF
+
+ let protectora = ["jakson", "lola", "richie", "luna", "mika", "thor"]
+ for (let cachorros of protectora) {
+    console.log (cachorros);
+ }
+console.log ("************************")
+
+//EJERCICIO FOR-IN
+
+const concesionario = {
+    nissan: 1,
+    opel: 6,
+    seat: 2,
+    kia: 3,
+}
+
+for (let coches in concesionario) {
+    console.log (coches);
+}
+console.log ("---------------")
+
+for (let coches in concesionario)  {
+    console.log (`${coches}: ${concesionario[coches]}`);
+}
+console.log ("---------------")
+
+//EJERCICIO WHILE
+
+let contador = 0
+while (contador <=10) {
+    console.log ("vuelta:", contador)
+    contador ++
 }
