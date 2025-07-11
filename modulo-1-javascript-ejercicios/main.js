@@ -79,3 +79,29 @@ while (contador <=10) {
     console.log ("vuelta:", contador)
     contador ++
 }
+console.log ("***************")
+
+//PRECIO CON DESCUENTO
+
+function calculateDiscountPrice (price, discountPercentage) {
+    const discount = (price * discountPercentage) / 100
+    const priceWithDiscount = price - discount
+    return priceWithDiscount
+}
+
+//el precio del producto es 120€ y el descuento es del 15%
+const originalPrice = 322   
+const discountPercentage = 15
+const finalPrice = calculateDiscountPrice (originalPrice, discountPercentage)
+
+console.log ("El precio original era:", originalPrice, "€")
+console.log ("El descuento es del:", discountPercentage,"%")
+console.log ("El precio final es:", finalPrice, "€")
+
+document.querySelector (".title").innerHTML = "Calcula el precio de tu producto descontado";
+document.querySelector (".subtitle").innerHTML = `
+<p class= "subtitle-line">El precio original era:  ${originalPrice} € </p> <br>
+<p class= "subtitle-line">El descuento es del:  ${discountPercentage} % </p> <br>
+<p class= "subtitle-line">El precio final es:  ${finalPrice} € </p> `;
+
+console.log ("***************")
