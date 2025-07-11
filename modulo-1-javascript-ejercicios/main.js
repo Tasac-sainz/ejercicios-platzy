@@ -105,3 +105,24 @@ document.querySelector (".subtitle").innerHTML = `
 <p class= "subtitle-line">El precio final es:  ${finalPrice} € </p> `;
 
 console.log ("***************")
+
+//CALLBACK
+
+function procesarUsuario (nombre, callback) {
+    console.log ("Procesando el nombre...");
+    callback (nombre)
+}
+function saludar (nombre) {
+    console.log ("¡Hola, " + nombre + "!");
+}
+procesarUsuario ("Leda", saludar)
+
+//FUNCIONES DENTRO DE OBJETOS
+
+const rocket = {
+    name: "Falcon 9",
+    launchMessage: function launchMessage () {
+        console.log ("🔥")
+    }
+}
+rocket.launchMessage()
