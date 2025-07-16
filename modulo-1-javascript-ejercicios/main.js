@@ -126,3 +126,175 @@ const rocket = {
     }
 }
 rocket.launchMessage()
+
+const fictionCharacter = {
+    name: "Tío Ben",
+    messageWithTraditionalFunction: function (message)  {
+        console.log (`${this.name} dice: ${message}`)
+        },
+    messageWithArrowFunction: (message) => {
+        console.log (`${this.name} dice: ${message}`);
+    }
+    }
+fictionCharacter.messageWithTraditionalFunction ("Un gran poder implica una gran responsabilidad")
+//fitionCharacter.messageWithArrowFunction ("Un gran poder conlleva una gran responsabilidad")   lo comento para que no salga el error de undefined
+
+const fruits = Array ("fresones", "manzana", "plátano", "naranaja", "pera")
+console.log (fruits)
+
+console.log ("Ejercicio 4 de Adalab: LA CESTA DE PERAS")
+//EJERCICIO DE ADALAB-MÓDULO 2-LECCIÓN OBJETOS: EJERCICIO 4
+const pearsBasket = {
+    max: 10,
+    min: 0,
+    numberOfPears: 3,
+    defaultPears: 0,
+    addPears: () => {
+        if (pearsBasket.numberOfPears < pearsBasket.max) {
+        pearsBasket.numberOfPears ++
+        }
+    },
+    decreasePears: () => {
+        if (pearsBasket.numberOfPears > pearsBasket.min) {
+        pearsBasket.numberOfPears --
+        }
+    },
+    resetPears: () => {
+        pearsBasket.numberOfPears = pearsBasket.defaultPears;
+    },
+};
+
+const addButton = document.querySelector (".add")
+const deleteButton = document.querySelector (".delete")
+const resetButton = document.querySelector (".reset")
+const pearsText = document.querySelector (".pears")
+
+pearsText.innerHTML = pearsBasket.numberOfPears + " peras"; //para que ponga el número inicial de peras antes de comenzar la lógica
+
+addButton.addEventListener ("click", () => {
+    pearsBasket.addPears();
+    pearsText.innerHTML = pearsBasket.numberOfPears + " peras";
+    console.log (pearsBasket.numberOfPears);
+});
+
+deleteButton.addEventListener ("click", () => {
+    pearsBasket.decreasePears();
+    pearsText.innerHTML = pearsBasket.numberOfPears + " peras";
+    console.log (pearsBasket.numberOfPears);
+});
+
+resetButton.addEventListener ("click", () => {
+    pearsBasket.resetPears();
+    pearsText.innerHTML = pearsBasket.numberOfPears + " peras";
+    console.log (pearsBasket.numberOfPears)
+});
+
+console.log ("**********************")
+
+const frutas = ["manzana", "melón", "sandía"]
+console.log ("Primer array de frutas:", frutas);
+
+frutas.push("piña")
+console.log ("Añadiendo piña con push:", frutas);
+
+const newFrutas = frutas.concat (["albaricoque", "uvas", "arándanos"])
+console.log ("Concatenando arrays:", newFrutas)
+
+const isArray = Array.isArray (frutas)
+console.log (isArray);
+
+console.log (frutas.length)
+
+const countries = ["España", "Francia", "Italia"]
+console.log ("Primeros países:", countries)
+countries.push ("Grecia", "Alemania")
+console.log ("Añadiendo dos:", countries)
+
+countries.pop()
+console.log ("Eliminando el último país con pop: ", countries)
+
+countries.push ("Alemania")
+console.log(countries)
+countries.shift()
+console.log (countries)
+
+countries.unshift("España","Argentina","Méjico")
+console.log (countries)
+
+countries.splice(1,2,"Holanda")
+console.log ("Utilizando splice para a partir del índice 1 -Argentina-, borrar dos elementos y añadir Holanda",countries)
+
+const numbers = [1,2,3,4,5]
+const squaredNumbers = numbers.map(num => num*num)
+console.log (numbers)
+console.log (squaredNumbers)
+
+console.log ("EJERCICIO DE: forEach *******************************")
+
+const newNumber = [1,2,3,4,5,6]
+let sum = 0
+newNumber.forEach(num => {
+    sum += num
+});
+console.log ("Números que había en el array: ",newNumber)
+console.log ("Resultado de la suma de array: ", sum)
+
+console.log ("EJERCICIO FILTER", "extraer números pares del array, par en inglés es even")
+
+const filterNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const evenNumbers = filterNumbers.filter(number => number % 2 === 0)
+console.log (filterNumbers)
+console.log (evenNumbers)
+
+console.log ("Ejemplo con el método reduce **************")
+
+const cars = ["seat", "fiat", "peugeot", "seat", "opel", "opel", "nissan", "fiat", "seat", "seat"]
+const carsFrecuency = cars.reduce ((accumulator, currentValue) => {
+    if (accumulator[currentValue]) {
+        accumulator[currentValue]++;
+    } else {
+        accumulator[currentValue]= 1;
+            }
+    return accumulator;
+    }, {})
+console.log (cars)
+console.log (carsFrecuency)
+const multiplesOf5 = [5,10,15,20,25]
+const firstNumberGreaterThan10 = multiplesOf5.find (number => number >10)
+console.log (multiplesOf5)
+console.log (firstNumberGreaterThan10)
+
+console.log ("find e findIndex")
+const randomNumber = [6, 14, 27, 56, 60, 42]
+const indexNumber = randomNumber.findIndex (number => number >50)
+
+console.log (randomNumber)
+console.log ("Estas son las posiciones del primer elemento del array mayor de 50: ", indexNumber)
+
+console.log ("Ejemplo slice")
+const animals =["ant", "bison", "camel", "duck", "elephant"]
+console.log (animals.slice(2))
+console.log (animals.slice(-2))
+
+console.log ("Ejemplo spread operator")
+const originalArray = [1,2,3,4,5]
+const copyAnArray = [...originalArray]
+console.log (originalArray)
+console.log (copyAnArray)
+
+const array1 = ["perro", "gato", "ratón"]
+const array2 = ["loro", "conejito", "tortuga"]
+const combinedArray = [...array1,...array2]
+console.log (combinedArray)
+
+const menArray = ["Juan", "Antonio", "Lucas"]
+const arrayWithWomen = [...menArray, "Soraya", "Beatriz", "Marta", "Arantxa"]
+console.log (menArray)
+console.log (arrayWithWomen)
+
+function sum2(a, b, c) {
+    return a+b+c
+}
+sum2 (1,2,3)
+const result = sum2 (1,2,3)
+console.log (result)

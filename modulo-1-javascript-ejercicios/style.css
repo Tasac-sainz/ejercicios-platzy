@@ -27,3 +27,15 @@
     justify-content: center;
     background-color: aliceblue;
 }
+.pears-exercice {
+    padding: 15px;
+    padding-left: 50px;    
+        .pears {
+            border:solid;
+            border-radius: 15px;
+            padding: 10px;
+            width: 5%;
+            text-align: center;
+            background-color: aliceblue;
+        }
+}
