@@ -300,3 +300,25 @@ const result = sum2 (1,2,3)
 console.log (result)
 
 console.log ("****************")
+console.log ("OBJETOS")
+
+const persona = {
+    nombre: "Tania S. Sainz de Aja",
+    edad: 41,
+    direccion: {
+        calle: "la Almazara, 10",
+        poblacion: "Pedrezuela"
+    },
+    genero: "mujer"
+};
+console.log (persona)
+console.log ("Añadimos propiedades y función saludo")
+persona.email = "tssainzdeaja@gmail.com";
+persona.saludar = () => console.log (`Hola, me llamo ${persona.nombre}`);
+persona.saludar ();
+
+persona.despedida = () => console.log ("Hasta luego, firmado: " + persona.nombre);
+persona.despedida();
+console.log ("Borramos propiedades y funciones: email y despedida")
+delete persona.email;
+delete persona.despedida;
