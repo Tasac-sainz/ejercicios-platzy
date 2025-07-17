@@ -90,8 +90,8 @@ function calculateDiscountPrice (price, discountPercentage) {
 }
 
 //el precio del producto es 120€ y el descuento es del 15%
-const originalPrice = 322   
-const discountPercentage = 15
+const originalPrice = 415   
+const discountPercentage = 20
 const finalPrice = calculateDiscountPrice (originalPrice, discountPercentage)
 
 console.log ("El precio original era:", originalPrice, "€")
@@ -322,3 +322,88 @@ persona.despedida();
 console.log ("Borramos propiedades y funciones: email y despedida")
 delete persona.email;
 delete persona.despedida;
+
+console.log ("FUNCIÓN CONSTRUCTORA Y CREACIÓN DE INSTANCIAS")
+
+function Persona (Nombre, Apellido, Edad, Teléfono) {
+    this.Nombre = Nombre;
+    this.Apellido = Apellido;
+    this.Edad = Edad;
+    this.Teléfono = Teléfono;
+};
+
+console.log (Persona);
+const persona1 = new Persona ("Juan", "Pérez", 30);
+console.log (persona1);
+const persona2 = new Persona ("Diego", "García", 42);
+console.log (persona2);
+
+console.log ("añadir una propiedad a una instancia en particular - persona1 Nacionalidad: Argentino");
+persona1.Nacionalidad = "Argentino";
+
+console.log ("Añadir nueva propiedad a la función constructora a partir del prototype. este teléfono se quedará como por default sin que se pueda modificar en ninguna instancia")
+Persona.prototype.teléfono = "91 843 35 97"; //este teléfono se quedará como por default sin que se pueda modificar en ninguna instancia
+console.log (Persona);
+const persona3 = new Persona ("Laura", "Martín", 46, "633 584 209"); //para añadir la propiedad teléfono, lo hemos tenido que hacer en la declaración de la función constructora.
+console.log (persona3);
+
+Persona.prototype.saludar = function () {
+    console.log (`Hola me llamo ${this.Nombre} ${this.Apellido}`);
+}
+persona1.saludar();
+persona3.saludar();  
+
+console.log ("*******************OBJETOS CREADOS CON CLASES*******************");
+class Coche {
+    constructor (marca, modelo, precio) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.precio = precio;
+    }
+    oferta () {
+        console.log (`La oferta del mes: ${this.marca} ${this.modelo} por sólo ${this.precio}€`);
+    }
+};
+
+console.log (Coche);
+const coche1 = new Coche ("Seat", "León", "12.300");
+coche1.oferta ();
+console.log (coche1);
+
+Coche.prototype.saludar = function () {
+    console.log (`Hola soy un ${this.marca} ${this.modelo}`);}
+
+coche1.saludar ();
+
+console.log ("***********HERENCIA EN JAVASCRIPT***************");
+
+class Animal {
+    constructor (nombre, tipo) {
+        this.nombre = nombre;
+        this.tipo = tipo;
+    }
+    emitirSonido = function () {
+        console.log ("El animal emite un sonido")
+    };
+};
+class Perro extends Animal {
+    constructor (nombre, tipo, raza) {
+        super (nombre, tipo);
+        this.raza = raza;
+    }
+    emitirSonido = function () {
+        console.log ("Los perros ladran");
+    }
+    correr = function () {
+        console.log (`${this.nombre} corre alegre`);
+    }
+};
+
+const perro1 = new Perro ("Toby", "perro", "podenco");
+const animal1 = new Animal ("Zape", "gato");
+
+perro1.emitirSonido();
+animal1.emitirSonido();
+perro1.correr();
+
+
