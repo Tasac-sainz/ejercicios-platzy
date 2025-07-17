@@ -298,3 +298,5 @@ function sum2(a, b, c) {
 sum2 (1,2,3)
 const result = sum2 (1,2,3)
 console.log (result)
+
+console.log ("****************")
