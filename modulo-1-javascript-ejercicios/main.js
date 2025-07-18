@@ -370,28 +370,28 @@ const coche1 = new Coche ("Seat", "León", "12.300");
 coche1.oferta ();
 console.log (coche1);
 
-Coche.prototype.saludar = function () {
+Coche.prototype.saludar = function () {                 //como voy a usar this. en la función, tengo que usar function en lugar de arrow
     console.log (`Hola soy un ${this.marca} ${this.modelo}`);}
 
 coche1.saludar ();
 
 console.log ("***********HERENCIA EN JAVASCRIPT***************");
 
-class Animal {
+class Animal {                              // clase constructora (clase madre)
     constructor (nombre, tipo) {
         this.nombre = nombre;
         this.tipo = tipo;
     }
-    emitirSonido = function () {
+    emitirSonido =  () => {
         console.log ("El animal emite un sonido")
     };
 };
-class Perro extends Animal {
+class Perro extends Animal {                    // otra clase constructora extendida de la madre
     constructor (nombre, tipo, raza) {
         super (nombre, tipo);
         this.raza = raza;
     }
-    emitirSonido = function () {
+    emitirSonido =  () => {                 //mientras no tenga que usar this. puedo usar funciones arrow
         console.log ("Los perros ladran");
     }
     correr = function () {
@@ -405,5 +405,85 @@ const animal1 = new Animal ("Zape", "gato");
 perro1.emitirSonido();
 animal1.emitirSonido();
 perro1.correr();
+console.log (perro1)
+
+Perro.prototype.segundoMetodo = (Nombre) => {
+    console.log ("Esto es un segundo método de un perro ladrando");
+};
+
+perro1.segundoMetodo ();
+console.log (animal1);
+
+const perro2 = new Perro ("Tango", "perro", "golden, dálmata y pitt");
+perro2.segundoMetodo ();
+
+Animal.prototype.cuidaLaNaturaleza = () => {
+    console.log ("La naturaleza es nuestra madre, debemos cuidarla");
+};
+perro2.cuidaLaNaturaleza();
+animal1.cuidaLaNaturaleza();
+
+class Empleados {
+    constructor (nombre, apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+    };
+    saludando = function () {
+        console.log (`${this.nombre} ${this.apellido} te saluda`);
+    };
+};
+
+const empleado1 = new Empleados ("Miguel", "Pérez");
+const empleado2 = new Empleados ("Lucía", "Vergara");
+
+empleado1.saludando ();
+empleado2.saludando();
+
+//RETO VALIDACIÓN DE USUARIO EN UNA RED SOCIAL . LO COMENTO ENTERO PARA QUE LA PÁGINA DE EJERCICIOS Y EJEMPLOS SIGA FUNCIONANDO
+//1º creo las bases de datos:
+
+const userDatabase = [
+    {username: "carol", password:"123",},
+    {usarname:"andrés", password:"456",},
+    {username:"Marina", password:"789",},
+];
+const userTimeline = [
+    {username: "Estefany", timeline:"Me encanta JavaScript"},
+    {username: "Oscar", timeline:"Developer es lo mejor"},
+    {username: "Marina", timeline:"Me gusta más el té que el café"},
+    {username: "Andrés", timeline:"Hoy no me apetece trabajar"},
+];
+
+//2º Creo los prompt para que el navegador pida usuario y contraseña al cliente y lo guardo en sus variables correspondientes:
+
+const username = prompt ("¿Cuál es tu usuario?");           
+const password = prompt ("¿Cuál es tu contraseña?");
 
 
+// 3º Creo una función arrow para que me haga la validación
+
+
+const usuarioExistente = (username, password) => {
+    for (let i = 0; i < userDatabase.length; i++){
+        if (
+            userDatabase[i].username === username &&
+            userDatabase[i].password === password
+                ){
+                    return true;
+                    break;
+                }
+                else {
+                   return false;
+            };
+    };
+};
+
+const signIn = (username, password) => {
+    if (usuarioExistente (username, password)) {
+        alert ("Qué alegría verte " + username);
+        console.log (userTimeline);
+    } else {
+        alert ("Oh vaya, ¡aún no te has registrado! o ¿es que te has equivocado de usuario o contraseña?");
+    }
+}
+signIn (username, password);
