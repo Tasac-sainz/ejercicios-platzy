@@ -444,14 +444,14 @@ empleado2.saludando();
 
 const userDatabase = [
     {username: "carol", password:"123",},
-    {usarname:"andrés", password:"456",},
-    {username:"Marina", password:"789",},
+    {username:"andrés", password:"456",},
+    {username:"marina", password:"789",},
 ];
 const userTimeline = [
-    {username: "Estefany", timeline:"Me encanta JavaScript"},
-    {username: "Oscar", timeline:"Developer es lo mejor"},
-    {username: "Marina", timeline:"Me gusta más el té que el café"},
-    {username: "Andrés", timeline:"Hoy no me apetece trabajar"},
+    {username: "estefany", timeline:"Me encanta JavaScript"},
+    {username: "oscar", timeline:"Developer es lo mejor"},
+    {username: "marina", timeline:"Me gusta más el té que el café"},
+    {username: "andrés", timeline:"Hoy no me apetece trabajar"},
 ];
 
 //2º Creo los prompt para que el navegador pida usuario y contraseña al cliente y lo guardo en sus variables correspondientes:
@@ -470,12 +470,9 @@ const usuarioExistente = (username, password) => {
             userDatabase[i].password === password
                 ){
                     return true;
-                    break;
-                }
-                else {
-                   return false;
-            };
-    };
+                        }
+        };
+    return false;        //es muy importante poner el return false fuera del for porque si no, sólo da por bueno el primer username del array
 };
 
 const signIn = (username, password) => {
