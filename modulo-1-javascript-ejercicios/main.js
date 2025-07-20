@@ -455,10 +455,11 @@ const userTimeline = [
 ];
 
 //2º Creo los prompt para que el navegador pida usuario y contraseña al cliente y lo guardo en sus variables correspondientes:
-
+//COMENTO LOS PROMPT PARA QUE NO SALGAN AL ACTUALIZAR LA WEB
+/* 
 const username = prompt ("¿Cuál es tu usuario?");           
 const password = prompt ("¿Cuál es tu contraseña?");
-
+ */
 
 // 3º Creo una función arrow para que me haga la validación
 
@@ -483,4 +484,67 @@ const signIn = (username, password) => {
         alert ("Oh vaya, ¡aún no te has registrado! o ¿es que te has equivocado de usuario o contraseña?");
     }
 }
-signIn (username, password);
+// signIn (username, password);  TENGO QUE COMENTAR ESTA FUNCIÓN PORQUE ES LA QUE CAPTA US Y CONTRASEÑA DE LOS PROMPT (QUE ESTÁN COMENTADOS)
+
+
+console.log ("****************** ---***********");
+
+class Usuarios {
+    constructor (id, nombre, edad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.edad = edad;
+    };
+};
+
+const usuario1 = new Usuarios (1, "Juan", 42);
+const usuario2 = new Usuarios (2, "Pedro", 50);
+const usuario3 = new Usuarios (3, "Ana", 35);
+const usuario4 = new Usuarios (4, "Leda", 40);
+
+const listaUsuarios = [usuario1, usuario2, usuario3, usuario4];
+
+
+function obtenerDatosDelArray(id){
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+        const usuario = listaUsuarios.find (u => u.id === id)
+     if(usuario) {
+        resolve(usuario);
+        alert (`Acertaste enhorabuena!!! conozco a  ${usuario.nombre}`)
+      } else {
+        reject("Error: Persona no encontrada")
+        alert ("Oooh qué pena, parece que la id que has puesto no es de nadie...prueba otra vez!")
+      }
+    }, 2000)
+  })
+}
+
+// Uso de la promesa
+console.log("Iniciando búsqueda...")
+
+obtenerDatosDelArray(5)
+  .then((usuario) => {
+    console.log("Persona encontrada:", usuario.nombre)
+    return usuario.edad
+    
+  })
+  .then((edad) => {
+    console.log("La edad de esta persona es:", edad)
+    
+  })
+  .catch((error) => {
+    console.log (error)
+  })
+  .finally(() => {
+    console.log("Búsqueda finalizada")
+    console.log ("**********************");
+  });
+
+ const usuario5 = new Usuarios (5, "Tania", 42);
+ listaUsuarios.push (usuario5);
+
+ const usuario6 = new Usuarios (6, "Julieta", 15);
+ listaUsuarios.push (usuario6);
+ usuario4.edad = 41;
+
