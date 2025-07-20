@@ -16,9 +16,9 @@
 //     console.log ("Esta vez fue demasiado alto, inténtalo otra vez") 
 // }
 
-//EJERICICIO SWITCH
+//EJERCICIO SWITCH
 
-let expr = "mango"
+let expr = "limón"
 
 switch (expr) {
     case "manzana":
@@ -548,3 +548,8 @@ obtenerDatosDelArray(5)
  listaUsuarios.push (usuario6);
  usuario4.edad = 41;
 
+console.log ("**********************");
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+  .then(response => response.json())
+  .then(data => console.log(data))
