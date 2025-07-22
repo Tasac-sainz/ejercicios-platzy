@@ -553,3 +553,15 @@ console.log ("**********************");
 fetch('https://jsonplaceholder.typicode.com/posts')
   .then(response => response.json())
   .then(data => console.log(data))
+
+  console.log ("***************************");
+
+  console.log ("PRUEBAS MIENTRAS ESTUDIO");
+
+  console.log ("***************************");
+
+  let cuenta = 1;
+  while (cuenta < 15) {
+    console.log ("Voy por la vuelta: " + cuenta);
+    cuenta ++;
+  };
